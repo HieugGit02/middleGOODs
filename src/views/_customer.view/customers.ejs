@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/customers.css' />
+  </head>
+  <body>
+    <div class="title-container">
+      <h1 class="title"><%= title %></h1>
+      <button class="button button-green" onclick="window.location.href=`/customers/new`">Create new Customer</button>
+    </div>
+
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Account Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <!-- <th>Postal Code</th> -->
+        <th>Country</th>
+        <th>CreatedTime</th>
+        <th>Actions</th>
+      </tr>
+      <% data.forEach(element => { %>
+        <tr>
+          <td> <%= element.CustomerName %>  </td>
+          <td> <%= element.AccountName %>  </td>
+          <td> <%= element.Address %>  </td>
+          <td> <%= element.City %>  </td>
+          <!-- <td> <%= element.PostalCode %>  </td> -->
+          <td> <%= element.Country %>  </td>
+          <td> <%= element.createdAt %>  </td>
+          <td>
+            <button class="button button-blue" onclick="window.location.href=`/customers/<%= element.id %> `">Edit</button>
+            <form class="form-remove" method="POST" action="/customers/remove/<%= element.id %>">
+              <button class="button button-red" type="submit">Remove</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

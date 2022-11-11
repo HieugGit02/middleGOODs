@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel='stylesheet' href='stylesheets/pet.css' />
+  </head>
+  <body>
+    <div class="title-container">
+      <h1 class="title"><%= title %></h1>
+      <button class="button button-green" onclick="window.location.href=`/pet/new`">Create new Pet</button>
+    </div>
+    <table>
+      <tr>
+        <th>PetName</th>
+        <th>Age</th>
+        <th>Type</th>
+        <th>Origin</th>
+        <th>Price</th>
+        <th>CreatedTime</th>
+        <th>Actions</th>
+      </tr>
+      <% data.forEach(element => { %>
+        <tr>
+          <td> <%= element.PetName %>  </td>
+          <td> <%= element.Age %>  </td>
+          <td> <%= element.Type %>  </td>
+          <td> <%= element.Origin %>  </td>
+          <td> <%= element.Price %>  </td>
+          <td> <%= element.createdAt %>  </td>
+          <td>
+            <button class="button button-blue" onclick="window.location.href=`/pet/<%= element.id %> `">Edit</button>
+            <form class="form-remove" method="POST" action="/pet/remove/<%= element.id %>">
+              <button class="button button-red" type="submit">Remove</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
