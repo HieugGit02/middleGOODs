@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/member.css' />
+  </head>
+  <body>
+    <div class="title-container">
+      <h1 class="title"><%= title %></h1>
+      <button class="button button-green" onclick="window.location.href=`/member/new`">Create new Member</button>
+    </div>
+
+    <table>
+      <tr>
+        <th>MemberName</th>
+        <th>AccountName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>IsAdmin</th>
+        <th>CreatedTime</th>
+        <th>Actions</th>
+      </tr>
+      <% data.forEach(element => { %>
+        <tr>
+          <td> <%= element.MemberName %>  </td>
+          <td> <%= element.AccountName %>  </td>
+          <td> <%= element.Address %>  </td>
+          <td> <%= element.City %>  </td>
+          <td> <%= element.Country %>  </td>
+          <td> <%= element.IsAdmin %>  </td>
+          <td> <%= element.createdAt %>  </td>
+          <td>
+            <button class="button button-blue" onclick="window.location.href=`/member/<%= element.id %> `">Edit</button>
+            <form class="form-remove" method="POST" action="/member/remove/<%= element.id %>">
+              <button class="button button-red" type="submit">Remove</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

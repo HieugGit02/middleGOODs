@@ -1,0 +1,32 @@
+body {
+    padding: 50px;
+    font: 18 "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  th, td {
+    text-align: center;
+  }
+  
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  
+  .form-remove {
+    display: initial;
+  }
+  
+  input:invalid{
+    animation: shake .3s;
+  }
+  
+  @keyframes shake {
+    25% {transform: translateX(4px)}
+    50% {transform: translateX(-4px)}
+    75% {transform: translateX(4px)}
+  }

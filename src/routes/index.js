@@ -14,4 +14,8 @@ router.post('/', (req, res, next) => {
   res.redirect('/pet');
 });
 
+router.post('/', (req, res, next) => {
+  res.redirect('/member');
+});
+
 module.exports = router;

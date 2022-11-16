@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// create new customer page
+// get create new customer page
 router.get('/new', function(req, res, next) {
   res.render('_customer.view/customers-new', {title: 'Create customer'})
 });
