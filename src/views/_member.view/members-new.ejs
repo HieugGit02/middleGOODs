@@ -35,9 +35,12 @@
           <label for="country">Country:</label>
           <input type="text" class="form-control" id="country" name="country">
         </div>       
-        <div class="form-group">
+        <div class="selectdiv">
           <label for="isAdmin">IsAdmin:</label>
-          <input type="text" class="form-control" id="isAdmin" name="isAdmin">
+          <select name="isAdmin" id="isAdmin">
+            <option value="0">false</option>
+            <option value="1">true</option>
+          </select>
         </div>       
         <button type="submit" class="btn btn-default">Create</button>
       </form>

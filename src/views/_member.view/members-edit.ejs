@@ -37,9 +37,12 @@
             <label for="country">Country:</label>
             <input type="text" class="form-control" id="country" name="country" value="<%= data.Country %>">
           </div>
-        <div class="form-group">
+        <div class="selectdiv">
           <label for="isAdmin">IsAdmin:</label>
-          <input type="text" class="form-control" id="isAdmin" name="isAdmin" value="<%= data.IsAdmin %>">
+          <select name="isAdmin" id="isAdmin" value="<%= data.IsAdmin %>">
+            <option value="0">false</option>
+            <option value="1">true</option>
+          </select>
         </div>       
         <button type="submit" class="btn btn-default">Create</button>
       </form>
